@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="login.css">
+    <title>Rants</title>
+</head>
+
+<body>
+    <div class="container">
+        <h2 id="loginTitle">RANTS</h2>
+        <h1 id="formTitle">Login to your existing account</h1>
+        <form id="loginForm">
+            <div class="username-container">
+                <!-- <label for="loginUsername">Username</label> -->
+                <input type="text" id="loginUsername" placeholder="Enter your username" required>
+            </div>
+
+            <div class="password-container">
+                <!-- <label for="loginPassword">Password</label> -->
+                <input type="password" id="loginPassword" placeholder="Enter your password" required>
+            </div>
+            <button type="button" id="loginButton" onclick="performLogin()">Login</button>
+            <h3 id="orSection">or</h3>
+            <button type="button" class="signup" onclick="toggleSignupForm()">Sign Up</button>
+        </form>
+    </div>
+
+    <script>
+        function redirectToSignupPage() {
+            window.location.href = "signup.html";
+        }
+    
+        function performLogin() {
+            alert("Please fill out the form."); // Placeholder alert, replace with actual logic
+        }
+    
+        function toggleSignupForm() {
+            redirectToSignupPage();
+        }
+    </script>
+</body>
+</html>

@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="signup.css">
+    <title>Rants</title>
+</head>
+
+<body>
+    <div class="container">
+        <h2 id="loginTitle">RANTS</h2>
+        <h1 id="formTitle">Sign up for a new account</h1>
+        <form id="signupForm">
+            <div class="name-container">
+                <!-- <label for="signupName">Name</label> -->
+                <input type="text" id="signupName" placeholder="Enter your name" required>
+            </div>
+
+            <div class="username-container">
+                <!-- <label for="signupUsername">Username</label> -->
+                <input type="text" id="signupUsername" placeholder="Create a username" required>
+            </div>
+
+            <div class="password-container">
+                <!-- <label for="signupPassword">Password</label> -->
+                <input type="password" id="signupPassword" placeholder="Create a password" required>
+            </div>
+
+            <button type="button" class="signup" onclick="performSignup()">Sign Up</button>
+        </form>
+    </div>
+
+    <script>
+        function redirectToLoginPage() {
+            window.location.href = "login.html";
+        }
+    
+        function performSignup() {
+            alert("Please fill out the signup form."); // Placeholder alert, replace with actual logic
+        }
+    
+        function goBackToLoginPage() {
+            redirectToLoginPage();
+        }
+    </script>
+</body>
+</html>

@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Rants</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link rel="stylesheet" href="homepage.css">
+    <link rel="stylesheet" href="post.css">
+</head>
+<body>
+    <div class="navbar">
+        <a href="homepage.html" id="house-icon"><i class="fas fa-home"></i></a>
+        <a href="search.html" id="search-icon"><i class="fas fa-search"></i></a>
+        <a href="#post" id="edit-icon" onclick="openPostForm()"><i class="fa-sharp fa-regular fa-pen-to-square"></i></a>
+        <a href="#notification" id="heart-icon"><i class="far fa-heart"></i></a>
+        <a href="#user" id="user-icon"><i class="far fa-user"></i></a>
+    </div>
+    <div class="horizontal-line"></div>
+    <div class="navbar1">
+        <a href="#signout" id="signout-icon"><i class="fa-solid fa-arrow-right-from-bracket"></i></a> 
+    </div>
+    <div class="profile-image">
+        <img src="gen.jpg" alt="Profile Image">
+    </div>
+    <div class="post-button-section">
+        <a href="#newpost" class="post-button">Post</a>
+    </div>
+    <div class="main-content">
+        <h1>Welcome to Rants</h1>
+        <h3>Express yourself freely and share your thoughts</h3>
+        <!-- Add more content as needed -->
+    </div>
+    <div class="user-post-content">
+        <input type="text" id="text-input" placeholder="Start a rant" onclick="openPostForm()">
+    </div>
+    <div class="transparent-background" id="postBackground"></div> <!-- Transparent background for the post form -->
+    <div class="post-form-container" id="postFormContainer" style="display: none;">
+        <div class="post-form">
+            <div class="user-info">
+                <img src="gen.jpg" alt="Profile Image" class="post-profile-image"> <!-- Use a different class for the post page profile image -->
+                <span class="user-name">gen</span> <!-- Replace "Username" with the actual username or name -->
+            </div>
+            <form>
+                <textarea id="postTextArea" placeholder="Start a rant..."></textarea>
+                <input type="file" id="media-upload" accept="image/*" style="display: none;">
+                <label for="media-upload" class="attach-media-icon"><i class="fa-solid fa-images"></i></label> <!-- Attach media icon -->
+                <button type="submit" class="post-button">Post</button>
+            </form>
+        </div>
+        <div class="close-icon" onclick="closePostForm()"><i class="fas fa-times"></i></div>
+    </div>
+    <script src="homepage.js"></script>
+</body>
+    <script>
+        function openPostForm() {
+            document.getElementById("postFormContainer").style.display = "block";
+            document.getElementById("postBackground").style.display = "block";
+        }
+    
+        function closePostForm() {
+            document.getElementById("postFormContainer").style.display = "none";
+            document.getElementById("postBackground").style.display = "none";
+        }
+    
+        // Prevent typing in user post content when post form is visible
+        document.getElementById("text-input").addEventListener("keydown", function(event) {
+            if (document.getElementById("postFormContainer").style.display === "block") {
+                event.preventDefault();
+            }
+        });
+    </script>            
+</html>
